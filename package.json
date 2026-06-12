@@ -1,0 +1,59 @@
+{
+  "name": "n8n-pro-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for full n8n instance management: workflows, executions, tags, credentials, variables, projects, users, security audit, source control and queue-mode health monitoring.",
+  "mcpName": "io.github.helbertparanhos/n8n-pro-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helbertparanhos/n8n-pro-mcp.git"
+  },
+  "homepage": "https://github.com/helbertparanhos/n8n-pro-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/helbertparanhos/n8n-pro-mcp/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "n8n-pro-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "prepublishOnly": "npm run build && node --test tests/*.test.mjs",
+    "inspector": "npx @modelcontextprotocol/inspector dist/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "n8n",
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "workflow-automation",
+    "n8n-api",
+    "queue-mode",
+    "claude",
+    "claude-code",
+    "cursor",
+    "ai-agents",
+    "strat-academy"
+  ],
+  "author": "Helbert Paranhos / Strat Academy",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0",
+    "zod-to-json-schema": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "typescript": "^5.6.0"
+  }
+}

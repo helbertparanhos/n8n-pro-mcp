@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "created_at": "2026-06-12T00:00:00Z",
+  "project_type": "mcp-typescript",
+  "internal": false,
+  "references": [
+    {
+      "url": "https://github.com/czlonkowski/n8n-mcp",
+      "fetched_at": "2026-06-12T00:00:00Z",
+      "description": "Referência principal — MCP de n8n com camada de docs de nodes + gestão de instância",
+      "tools_found": [
+        "tools_documentation",
+        "search_nodes",
+        "get_node",
+        "validate_node",
+        "validate_workflow",
+        "search_templates",
+        "get_template",
+        "n8n_create_workflow",
+        "n8n_get_workflow",
+        "n8n_update_workflow",
+        "n8n_delete_workflow",
+        "n8n_list_workflows",
+        "n8n_executions",
+        "n8n_credentials",
+        "n8n_audit"
+      ]
+    },
+    {
+      "url": "https://docs.n8n.io/api/api-reference/",
+      "fetched_at": "2026-06-12T00:00:00Z",
+      "description": "Documentação oficial da API pública v1 do n8n (workflows, executions, tags, credentials, users, variables, projects, audit, source-control)",
+      "tools_found": []
+    },
+    {
+      "url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/n8n-node-configuration/SKILL.md",
+      "fetched_at": "2026-06-12T00:00:00Z",
+      "description": "Skill de configuração de nodes — padrões resource/operation e disclosure progressivo",
+      "tools_found": []
+    },
+    {
+      "url": "https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/n8n-workflow-patterns/SKILL.md",
+      "fetched_at": "2026-06-12T00:00:00Z",
+      "description": "Skill de padrões de workflow — triggers, error handling, fluxos de dados",
+      "tools_found": []
+    },
+    {
+      "url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/workflow-automation/n8n/n8n-mcp-tools-expert",
+      "fetched_at": "2026-06-12T00:00:00Z",
+      "description": "Skill de uso de tools MCP de n8n — perfis de validação e seleção de tools",
+      "tools_found": []
+    },
+    {
+      "url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/workflow-automation/n8n/n8n-expression-syntax",
+      "fetched_at": "2026-06-12T00:00:00Z",
+      "description": "Skill de sintaxe de expressões — regras {{ }} e o erro clássico do $json.body em webhooks (virou regra do validate_workflow_json)",
+      "tools_found": []
+    },
+    {
+      "url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/workflow-automation/n8n/n8n-code-javascript",
+      "fetched_at": "2026-06-12T00:00:00Z",
+      "description": "Skill de Code nodes JS — formato de retorno [{json:{...}}] e pitfalls (virou regra do validate_workflow_json)",
+      "tools_found": []
+    },
+    {
+      "url": "https://github.com/n8n-io/n8n",
+      "fetched_at": "2026-06-12T00:00:00Z",
+      "description": "Repositório oficial do n8n",
+      "tools_found": []
+    }
+  ]
+}

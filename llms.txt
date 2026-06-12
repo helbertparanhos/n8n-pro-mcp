@@ -1,0 +1,53 @@
+# n8n Pro MCP
+
+> Full-instance management for self-hosted n8n — including queue mode — via the Model Context Protocol. 51 tools.
+
+n8n-pro-mcp is an MCP server that lets Claude Code, Cursor, Claude Desktop or any MCP client manage a self-hosted n8n instance through the official n8n public API v1: workflows, executions, tags, credentials, variables, projects, users, security audit, source control and health monitoring. It is queue-mode aware (live queue view, execution stats, dedicated webhook-processor base URL) and validates workflow JSON offline before sending it to the instance.
+
+## Available tools (51)
+
+- Workflows (12): `list_workflows`, `get_workflow`, `create_workflow`, `update_workflow` (safe partial update), `delete_workflow`, `activate_workflow`, `deactivate_workflow`, `transfer_workflow`, `search_workflows`, `clone_workflow`, `set_workflows_active_by_tag` (dry run), `validate_workflow_json` (offline)
+- Executions (10): `list_executions`, `get_execution`, `delete_execution`, `retry_execution`, `list_running_executions` (queue-mode live view), `run_webhook`, `wait_for_execution`, `summarize_execution_error`, `prune_executions` (dry run), `get_execution_stats`
+- Tags (6): `list_tags`, `create_tag`, `update_tag`, `delete_tag`, `get_workflow_tags`, `set_workflow_tags` (by name, auto-creates)
+- Credentials (4): `create_credential`, `delete_credential`, `get_credential_schema`, `transfer_credential`
+- Variables (4): `list_variables`, `create_variable`, `update_variable`, `delete_variable`
+- Projects (7): `list_projects`, `create_project`, `update_project`, `delete_project`, `add_user_to_project`, `remove_user_from_project`, `change_user_project_role`
+- Users (5): `list_users`, `get_user`, `create_user`, `delete_user`, `change_user_role`
+- System (3): `check_health`, `generate_audit`, `pull_source_control`
+
+## Installation
+
+```json
+{
+  "mcpServers": {
+    "n8n-pro": {
+      "command": "npx",
+      "args": ["-y", "n8n-pro-mcp"],
+      "env": {
+        "N8N_API_URL": "https://n8n.yourdomain.com",
+        "N8N_API_KEY": "your-api-key"
+      }
+    }
+  }
+}
+```
+
+## Environment variables
+
+- `N8N_API_URL` (required): base URL of the n8n instance, without /api/v1
+- `N8N_API_KEY` (required): n8n → Settings → n8n API → Create API key
+- `N8N_WEBHOOK_BASE_URL` (optional): separate base URL for webhook calls (queue mode)
+- `N8N_API_TIMEOUT_MS` (optional, default 30000)
+- `N8N_MAX_RETRIES` (optional, default 3 — GET requests only)
+
+## Known limitations
+
+- Variables, projects and source-control tools require licensed n8n features
+- The n8n public API never returns credential secrets (write-only by design)
+- Test webhooks (`run_webhook` with `test=true`) require the workflow open in "Listen for test event" mode
+
+## Links
+
+- GitHub: https://github.com/helbertparanhos/n8n-pro-mcp
+- npm: https://npmjs.com/package/n8n-pro-mcp
+- Documentation: https://github.com/helbertparanhos/n8n-pro-mcp#readme

@@ -1,0 +1,21 @@
+{
+  "name": "n8n-pro-mcp",
+  "displayName": "n8n Pro MCP",
+  "description": "Full-instance management for self-hosted n8n (incl. queue mode): workflows, executions, tags, credentials, variables, projects, users, audit and health — 51 tools.",
+  "version": "1.0.0",
+  "author": "helbertparanhos",
+  "license": "MIT",
+  "category": "DevOps",
+  "tags": ["mcp", "n8n", "automation", "queue-mode", "self-hosted"],
+  "repository": "https://github.com/helbertparanhos/n8n-pro-mcp",
+  "npm": "n8n-pro-mcp",
+  "tools": 51,
+  "transport": "stdio",
+  "auth": "env",
+  "envVars": [
+    { "name": "N8N_API_URL", "description": "Base URL of the n8n instance (no /api/v1 suffix)", "required": true, "sensitive": false },
+    { "name": "N8N_API_KEY", "description": "n8n API key (Settings -> n8n API)", "required": true, "sensitive": true },
+    { "name": "N8N_WEBHOOK_BASE_URL", "description": "Separate base URL for webhook calls (queue mode)", "required": false, "sensitive": false }
+  ],
+  "quickstart": { "command": "npx", "args": ["-y", "n8n-pro-mcp"] }
+}

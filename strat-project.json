@@ -1,0 +1,40 @@
+{
+  "name": "n8n-pro-mcp",
+  "title": "n8n Pro MCP",
+  "type": "mcp-server",
+  "description": "MCP server de gestão completa de instâncias n8n self-hosted (inclusive queue mode): workflows, execuções, tags, credenciais, variables, projects, users, auditoria de segurança, source control e monitoramento de saúde — 51 tools sobre a API pública v1.",
+  "status": "stable",
+  "version": "1.0.0",
+  "visibility": "public",
+  "install": "npx -y n8n-pro-mcp",
+  "homepage": "https://www.npmjs.com/package/n8n-pro-mcp",
+  "language": "typescript",
+  "features": [
+    "CRUD completo de workflows com update parcial (fetch+merge) e validação offline antes de enviar",
+    "Gestão de execuções com visão de fila (queue mode): execuções em andamento, retry e estatísticas agregadas de sucesso/erro/duração",
+    "Tags por nome com auto-criação, variables, projects, users e transferência de workflows/credenciais entre projetos",
+    "Disparo de workflows via webhook (produção e teste) com base URL dedicada para webhook processors",
+    "check_health (healthz + readiness + API), auditoria de segurança nativa e pull de source control",
+    "validate_workflow_json offline: sintaxe {{ }}, $json.body de webhooks, retorno de Code nodes, conexões órfãs e segredos hardcoded",
+    "Composições operacionais: summarize_execution_error (debug enxuto), prune_executions e set_workflows_active_by_tag (com dry run), wait_for_execution, clone_workflow e gestão de membros de projeto",
+    "24 testes unitários (node:test, zero deps), CI GitHub Actions (build + test + audit), LICENSE MIT"
+  ],
+  "depends_on": [],
+  "tags": [
+    "n8n",
+    "mcp",
+    "automation",
+    "queue-mode",
+    "self-hosted"
+  ],
+  "owner": "Helbert Paranhos / Strat Academy",
+  "updated": "2026-06-12",
+  "approval": {
+    "target": "public",
+    "status": "approved",
+    "requested_by": "stratcolaboradores",
+    "requested_at": "2026-06-12",
+    "approved_by": "helbertparanhos",
+    "decision_at": "2026-06-12"
+  }
+}

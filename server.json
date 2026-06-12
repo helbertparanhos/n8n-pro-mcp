@@ -1,0 +1,40 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.helbertparanhos/n8n-pro-mcp",
+  "description": "Manage self-hosted n8n (incl. queue mode): workflows, executions, users, audit — 51 tools.",
+  "title": "n8n Pro MCP",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/helbertparanhos/n8n-pro-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "n8n-pro-mcp",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "N8N_API_URL",
+          "description": "Base URL of the n8n instance (no /api/v1 suffix)",
+          "isRequired": true,
+          "isSecret": false
+        },
+        {
+          "name": "N8N_API_KEY",
+          "description": "n8n API key (Settings -> n8n API -> Create API key)",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "N8N_WEBHOOK_BASE_URL",
+          "description": "Separate base URL for webhook calls (queue mode webhook processors)",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
